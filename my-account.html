@@ -29,28 +29,31 @@
                     </div>
                     <ul class="nav navbar-nav">
                         <li><a href="dashboard.html">Dashboard</a></li>
-                        <li class="active"><a href="company.html">Empresas</a></li>
+                        <li><a href="company.html">Empresas</a></li>
                         <li><a href="new-order.html">Novo Pedido</a></li>
-                        <li><a href="my-account.html">Minha Conta</a></li>
+                        <li class="active"><a href="my-account.html">Minha Conta</a></li>
                         <li><a href="">Sair</a></li>
                     </ul>
                 </div>
             </nav>
             <div class="container">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <h2><strong><u>Cadastrar nova empresa</u></strong></h2> 
-                    <p>&nbsp;</p> 
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 square-account">
+                    <h3 class="text-center">Minha conta</h3>  
                     <form>          
                         <div class="form-group">
-                            <label for="company">Nome Fantasia:</label>
-                            <input class="form-control" type="text" id="company">
+                            <label for="usr">E-mail:</label>
+                            <input class="form-control" placeholder="seu@email.com.br" type="text" id="usr">
                         </div>
                         <div class="form-group">
-                            <label for="cnpj">CNPJ:</label>
-                            <input type="text" class="form-control" id="cnpj">
+                            <label for="pwd">Senha:</label>
+                            <input type="password" class="form-control" id="pwd">
                         </div>
-                        <a href="dashboard.html" class="btn btn-default" role="button">Cancelar</a>
-                        <button type="submit" class="btn btn-default">Cadastrar</button>
+                        <div class="form-group">
+                            <label for="pwd2">Repetir senha:</label>
+                            <input type="password" class="form-control" id="pwd2">
+                        </div>
+                        <a href="index.html" class="btn btn-default" role="button">Cancelar</a>
+                        <button type="submit" class="btn btn-default">Alterar dados</button>
                     </form>
                 </div>
             </div>
