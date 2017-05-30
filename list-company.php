@@ -8,8 +8,8 @@ echo  "<select class='form-control' type='text' id='list-company'>";
 
 $i = 0;
 while ($row = mysqli_fetch_array($result)) {
-   
-      echo "<option>" . $row["name_company"] . "</option>";
+    $name = $row['name_company']; 
+      echo "<option name='$name'>" . $row["name_company"] . "</option>";
     }
 
 echo "</select>";

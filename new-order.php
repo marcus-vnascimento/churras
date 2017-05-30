@@ -27,11 +27,10 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <h2><strong><u>Novo Pedido</u></strong></h2>
                     <p>&nbsp;</p>
-                    <form>          
+                    <form action="" method="post">          
                         <div class="form-group">
                             <label for="list-company">Selecione uma Empresa:</label>
-                                  <?php include 'list-company.php' ?>
-                            </select> 
+                                  <?php include 'list-company.php' ?> 
                         </div>
                         <div class="form-group">
                             <label for="list-product">Selecione uma Produto:</label>
@@ -63,7 +62,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="dashboard.html" class="btn btn-default" role="button">Cancelar</a>
+                            <a href="dashboard.php" class="btn btn-default" role="button">Cancelar</a>
                             <button type="submit" class="btn btn-default">Fechar Pedido</button>
                         </form> 
                     </div>
