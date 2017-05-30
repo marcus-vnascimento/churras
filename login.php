@@ -3,25 +3,24 @@
 
 require 'db.php';
 
-echo $_SERVER["REQUEST_METHOD"];
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$email = $mysqli->escape_string($_POST['email']);
-$password = $mysqli->escape_string( password_hash($_POST['pwd'], PASSWORD_BCRYPT) );
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-print_r($_POST);
+    $email = $mysqli->escape_string($_POST['email']);
+    $password = $mysqli->real_escape_string($_POST['pwd']);
 
-$result = $mysqli->query("SELECT * FROM accounts WHERE email='$email'") or die($mysqli->error);;
-
-if ( $result->num_rows == 0 ){ // User doesn't exist
+    $result = $mysqli->query("SELECT * FROM accounts WHERE email='$email'");
+    
+if ( $result->num_rows == 0 ){
+    // User doesn't exist
     $_SESSION['message'] = "E-mail não cadastrado";
     header("location: index.php");
 }
-else { // User exists
+else { // email exists
     $user = $result->fetch_assoc();
 
     if ( password_verify($_POST['pwd'], $user['password']) ) {
-        
+
         $_SESSION['email'] = $user['email'];
          // This is how we'll know the user is logged in
         $_SESSION['logged_in'] = true;

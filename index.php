@@ -1,5 +1,6 @@
 <?php 
 /* Main page with form: login */
+require 'db.php';
 session_start();
 $_SESSION['message'] = '';
 require 'login.php';
@@ -32,14 +33,15 @@ require 'login.php';
             <div class="container">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 square-login">
                     <h3>Efetue seu login para acessar o sistema</h3>  
-                    <form action="login.php" method="post" enctype="multipart/form-data" autocomplete="off">          
+                    <div class="alert alert-error"><?php echo $_SESSION['message'] ?></div>
+                    <form action="login.php" method="POST" enctype="multipart/form-data" autocomplete="off">          
                         <div class="form-group">
                             <label for="email">Login(e-mail):</label>
                             <input class="form-control" name="email" type="email" id="email">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Senha:</label>
-                            <input type="password" name="password" class="form-control" id="pwd">
+                            <input type="password" name="pwd" class="form-control" id="pwd">
                         </div>
                         <a href="new-account.php" class="btn btn-default" role="button">Nova conta</a>
                         <button type="submit" name="login" value="Login" class="btn btn-default">Login</button>

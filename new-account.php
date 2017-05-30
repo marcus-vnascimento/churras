@@ -1,10 +1,6 @@
 <?php
-    require 'db.php';
     session_start();
-    $_SESSION['message'] = '';
     require 'register.php';
-
-
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -33,7 +29,7 @@
             <div class="container">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 square-login">
                     <h3>Novo Cadastro</h3>  
-                    <div class="alert"><?= $_SESSION['message'] ?></div>
+                    <div class="alert alert-error"><?php echo $_SESSION['message']; ?></div>
                     <form action="register.php" method="post" enctype="multipart/form-data" autocomplete="off">          
                         <div class="form-group">
                             <label for="email">E-mail:</label>
