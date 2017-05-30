@@ -30,10 +30,7 @@
                     <form>          
                         <div class="form-group">
                             <label for="list-company">Selecione uma Empresa:</label>
-                            <select class="form-control" type="text" id="list-company">
-                                <option>Nenhuma</option>
-                                <option>teste1</option>
-                                <option>teste2</option>
+                                  <?php include 'list-company.php' ?>
                             </select> 
                         </div>
                         <div class="form-group">
