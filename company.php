@@ -1,3 +1,12 @@
+
+<?php 
+/* Main page with form: login */
+require 'db.php';
+session_start();
+require 'new-company.php';
+
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 <head>
@@ -27,17 +36,18 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <h2><strong><u>Cadastrar nova empresa</u></strong></h2> 
                     <p>&nbsp;</p> 
-                    <form>          
+                    <div class="alert alert-error"><?php print_r ($_SESSION['message']); ?></div>
+                    <form action="new-company.php" method="post">          
                         <div class="form-group">
                             <label for="company">Nome Fantasia:</label>
-                            <input class="form-control" type="text" id="company">
+                            <input class="form-control" name="name_company" type="text" id="company">
                         </div>
                         <div class="form-group">
                             <label for="cnpj">CNPJ:</label>
-                            <input type="text" class="form-control" id="cnpj">
+                            <input type="text" name="cnpj" class="form-control" id="cnpj">
                         </div>
-                        <a href="dashboard.html" class="btn btn-default" role="button">Cancelar</a>
-                        <button type="submit" class="btn btn-default">Cadastrar</button>
+                        <a href="dashboard.php" class="btn btn-default" role="button">Cancelar</a>
+                        <button type="submit" name="cadastrar" class="btn btn-default">Cadastrar</button>
                     </form>
                 </div>
             </div>
